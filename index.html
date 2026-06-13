@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Spesial Untukmu ✨</title>
+    <style>
+        body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
+        .card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 400px; width: 90%; }
+        input { padding: 12px; width: 80%; border: 2px solid #ddd; border-radius: 10px; font-size: 16px; margin-bottom: 15px; outline: none; }
+        button { background: #667eea; color: white; border: none; padding: 12px 25px; font-size: 16px; border-radius: 10px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        button:hover { background: #764ba2; }
+        .pesan { font-size: 18px; line-height: 1.6; color: #333; display: none; white-space: pre-line; animation: fadeIn 1s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div id="inputArea">
+        <h2>Siapa namamu? 👀</h2>
+        <input type="text" id="namaInput" placeholder="Ketik nama panggilanmu...">
+        <br>
+        <button onclick="bukaPesan()">Buka Pesan ✨</button>
+    </div>
+    <div id="pesanArea" class="pesan"></div>
+</div>
+
+<script>
+function bukaPesan() {
+    // Mengambil nama yang diketik dan mengubahnya jadi huruf kecil semua agar tidak salah
+    var nama = document.getElementById("namaInput").value.toLowerCase().trim();
+    var output = document.getElementById("pesanArea");
+    var inputArea = document.getElementById("inputArea");
+    
+    // Bank data pesan untuk teman-temanmu
+    var daftarPesan = {
+        "nindi": "nindiiiii!!! semangat yaa buat buat masuk SMAN 1 atau 3 Sidoarjo-nya yaaa! kamu tuh wangi parah sihh bikin salfok, trs lucu bgt kalo inget kamu yg suka badmood pagi-pagi heheheh.. good luck yaaa, dapet yang terbaik yaa!!",
+        "putri": "putriii! finally kita se-sekolah di SMAN 1 Krian yeyy! seneng bgt bisa keterima bareng kamuu. meskipun kalau nanti kita beda kelas atau sibuk masing-masing, janji ya tetep akrab terus.. pokoknya kita hrs TETAPP main bareng! oiyaa aku salut bgt sama kerajinan tangan & gambar-gambar kamu, kreatif bgt sii. gambar kamu hrs bgt di-notice banyak orang yaa, pasti km bakal jd orang hebat dgn bakat km ituu! luvvv gagang",
+        "syafira": "safiraaa! congrats yaa udah lulus terus keterima di SMAN 1 Krian bareng aku sama putriii (and Yasmin) ihh keren bgt hasil TKA kamu, proud of u!. oiyaaa hobi ngelukis kamu tuh keren banget jujurrff, harus lanjut terus ya ikut lomba-lombanya! trs jgn lupa tetap semangat OSN-nya, siapa tau nanti bisa tembus IMO :; masuk univ impia",
+        "safira": "safiraaa! congrats yaa udah lulus terus keterima di SMAN 1 Krian bareng aku sama putriii (and Yasmin) ihh keren bgt hasil TKA kamu, proud of u!. oiyaaa hobi ngelukis kamu tuh keren banget jujurrff, harus lanjut terus ya ikut lomba-lombanya! trs jgn lupa tetap semangat OSN-nya, siapa tau nanti bisa tembus IMO :; masuk univ impia",
+        "yasmin": "yasminnn! semangat ya buat masuk ke SMAN 1 Krian-nya, ayoo gabung biar bisaa bareng aku, putri, sama syaafiraa. truss kamu kan hobiii babgettz baca wattpad/novel, aku doaain nanti jadi author terkenal yaa terus terbitin bukuu, pasti aku beli deh bukunya nanti! lancar ya semuanyaa!",
+        "nia": "niaaa! selamat graduation yaa! sukses buat sekolah di mojokerto, Krian maupun tarik, btw, makin giat ya posting k-pop-nya, siapa tau cepet ketemu bias kamu atau siapa tau jadi idola K-Pop;; sukses terus ya sayangg!",
+        "virly": "Vrlyyy! happy graduation yaa! walaupun jauh di bali, aku tetappp doain kamuu terus!!, sukses yaaa pokoknya, aku doain lancar kamu masuk trisaka impian kamuu ituu. tetaap semangat belajarnyaa, walaupun beda pulau kita ttp akrab yaa! dan semoga kita bisa ketemu bert7 lagii!"
+    };
+
+    if (daftarPesan[nama]) {
+        inputArea.style.display = "none"; // Sembunyikan kotak input nama
+        output.innerText = daftarPesan[nama]; // Ambil pesan sesuai nama
+        output.style.display = "block"; // Munculkan teks pesannya
+    } else {
+        alert("Nama tidak terdaftar / Coba ketik nama panggilanmu dengan huruf kecil ya!");
+    }
+}
+</script>
+
+</body>
+</html>
